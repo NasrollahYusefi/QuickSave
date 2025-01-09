@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "qsave"
+version = "1.0.0"
+description = "QuickSave is a fast, memory-efficient, and lightweight key-value database."
+authors = ["Nasrollah Yusefi nasrollahyusefi2004@gmail.com"]
+license = "MIT"
+readme = "README.md"
+keywords = ["jsondb", "quicksave", "key-value", "database", "lightweight", "memory-efficient", "json"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^6.2"
+
+[tool.poetry.urls]
+homepage = "https://github.com/NasrollahYusefi/qsave"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
