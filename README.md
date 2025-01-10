@@ -13,6 +13,7 @@ QuickSave is a fast, memory-efficient, and lightweight key-value database design
 
 ---
 
+### [Documentation](https://nasrollahyusefi.github.io/QuickSave/)
 ## 📖 Table of Contents
 - [Why QuickSave?](#why-quicksave)
 - [Installation](#installation)
