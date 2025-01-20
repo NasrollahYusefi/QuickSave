@@ -330,6 +330,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#async-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Async version:
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -413,6 +422,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#async-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Async version:
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -478,6 +496,19 @@ with db.session() as session:
 
 with db.session() as session:
     print(session[&quot;nested&quot;])  # Output: {&quot;key&quot;: [1, 2, 3]}
+</code></pre>
+<h4 id="async-version">Async version:</h4>
+<pre><code class="language-python">from qsave.asyncio import AsyncQuickSave
+
+db = AsyncQuickSave(&quot;path/to/your/file.json&quot;)
+
+async def main():
+    async with db.session(False) as session:
+        print(len(session))
+        await session.commit()
+        await session.rollback()  # NOTE: after commit, rollback does nothing :(
+        # only commit and rollback need to be awaited
+        # other functionalities remain the same as sync version
 </code></pre>
 
 
