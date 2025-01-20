@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 
-__version__ = "1.0.0"
+__version__ = "1.1.1"
 __license__ = "MIT License"
 __copyright__ = "Copyright (c) 2025 Nasrollah Yusefi <https://github.com/NasrollahYusefi>"
 
