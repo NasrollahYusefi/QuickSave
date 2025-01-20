@@ -44,7 +44,7 @@ class AsyncSession:
         self.cache_upserts.clear()
         self.cache_deletes.clear()
 
-    def rollback(self):
+    async def rollback(self):
         if self.is_closed is True:
             raise ValueError("operation on closed session.")
         self.cache_upserts.clear()

@@ -30,6 +30,7 @@ QuickSave stands out for its speed, memory efficiency, and simplicity. Here are 
 - 🚀 **High Performance**: QuickSave is designed to be fast, with minimal overhead.
 - 💡 **Low Memory Usage**: The library is optimized for memory efficiency, making it a great choice for projects with limited resources.
 - 🧵 **Thread-Safe**: It supports thread-safe operations, ensuring that it works reliably in concurrent environments.
+- 🔀 **Both sync and async support**: You can use either sync or async version of QuickSave.
 - 🏎️ **Boosted Performance with `msgspec`**: By installing the optional `msgspec` library, you can further enhance QuickSave's performance, especially when handling complex data types.
 - 🔧 **No Dependencies**: QuickSave is a pure Python library, which means it has no external dependencies, making it easy to install and use in any Python project.
 
@@ -37,13 +38,18 @@ QuickSave stands out for its speed, memory efficiency, and simplicity. Here are 
 
 ## Installation
 Install QuickSave using pip:
-
 ```bash
 pip install --upgrade qsave
 ```
+
 Optionally, install `msgspec` to boost performance:
 ```bash
 pip install msgspec==0.19.0
+```
+
+If you want use async version of QuickSave:
+```bash
+pip install qsave[async]
 ```
 
 ## Getting Started
@@ -102,6 +108,21 @@ with db.session() as session:
 
 with db.session() as session:
     print(session["nested"])  # Output: {"key": [1, 2, 3]}
+```
+
+#### Async version:
+```python
+from qsave.asyncio import AsyncQuickSave
+
+db = AsyncQuickSave("path/to/your/file.json")
+
+async def main():
+    async with db.session(False) as session:
+        print(len(session))
+        await session.commit()
+        await session.rollback()  # NOTE: after commit, rollback does nothing :(
+        # only commit and rollback need to be awaited
+        # other functionalities remain the same as sync version
 ```
 
 ---
