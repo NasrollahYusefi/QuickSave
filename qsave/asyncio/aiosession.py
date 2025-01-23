@@ -88,9 +88,6 @@ class AsyncSession:
     def __iter__(self):
         yield from self.bef_data
 
-    def __eq__(self, value):
-        return value in self.bef_data
-
     def __repr__(self):
         return self.bef_data.__repr__()
 

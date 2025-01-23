@@ -9,7 +9,7 @@ class Session:
         filepath: os.PathLike,
         commit_on_expire: bool = False,
         pretty: bool = False,
-        lock: threading.Lock = None,
+        lock: threading.RLock = None,
         **kwargs
     ) -> None:
         self.cache_upserts = {}
@@ -95,10 +95,6 @@ class Session:
     def __iter__(self):
         self._open_bef_data()
         yield from self.bef_data
-
-    def __eq__(self, value):
-        self._open_bef_data()
-        return value in self.bef_data
 
     def __repr__(self):
         self._open_bef_data()

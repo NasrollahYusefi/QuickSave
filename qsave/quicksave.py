@@ -11,7 +11,7 @@ class QuickSave:
         **kwargs
     ) -> None:
         self.dbpath = path
-        self.lock = threading.Lock()
+        self.lock = threading.RLock()
         self.pretty = pretty
         self.kwargs = kwargs
 
